@@ -23,8 +23,8 @@ pipeline {
 					steps {			
 						script{
 							node{
-								sh 'mvn -B -DskipTests clean package'
-								sh 'mvn test'
+								sh 'docker exec -it jenkins-docker mvn -B -DskipTests clean package'
+								sh 'docker exec -it jenkins-docker mvn test'
 							}
 						}						
 					}
