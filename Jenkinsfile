@@ -21,7 +21,7 @@ pipeline {
 					// 	}
 					// }	
 					steps {			
-						scripts{
+						script{
 							node{
 								sh 'mvn -B -DskipTests clean package'
 								sh 'mvn test'
