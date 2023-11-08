@@ -19,16 +19,15 @@ pipeline {
 					// 		args '-u root'
 							
 					// 	}
-					// }
-					scripts{
-						node{
-							sh 'mvn -B -DskipTests clean package'
-							sh 'mvn test'
-						}
+					// }	
+					steps {			
+						scripts{
+							node{
+								sh 'mvn -B -DskipTests clean package'
+								sh 'mvn test'
+							}
+						}						
 					}
-					// steps {
-						
-					// }
 					post {
 						always {
 							junit 'target/surefire-reports/*.xml'
