@@ -12,6 +12,7 @@ pipeline {
 					}
 				}
 				stage('Headless Browser Test') {
+					agent none
 					// agent {	
 					// 	docker {
 					// 		image 'maven:3-alpine'							
