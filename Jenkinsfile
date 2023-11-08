@@ -21,17 +21,17 @@ pipeline {
 							
 					// 	}
 					// }	
-					node{
-						steps {			
-							script{
-									sh 'mvn -B -DskipTests clean package'
-									sh 'mvn test'
-							}						
-						}
-						post {
-							always {
-								junit 'target/surefire-reports/*.xml'
+					steps {			
+						script{
+							node{
+								sh 'mvn -B -DskipTests clean package'
+								sh 'mvn test'
 							}
+						}						
+					}
+					post {
+						always {
+							junit 'target/surefire-reports/*.xml'
 						}
 					}
 				}
