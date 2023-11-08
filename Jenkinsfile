@@ -17,6 +17,7 @@ pipeline {
 							node{
 								sh 'mvn -v'
 								sh 'ls -la'
+								sh 'cat pom.xml'
 								sh 'mvn -B -DskipTests clean package'
 								sh 'mvn test'
 							}
