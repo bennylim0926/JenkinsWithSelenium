@@ -15,6 +15,7 @@ pipeline {
 					agent {
 						docker {
 							image 'maven:3-alpine'
+							sh 'chmod -R 755 /root/.m2'
 							args '-v /root/.m2:/root/.m2' 
 							// args '-v ~/.m2:/var/maven/.m2'
 							
