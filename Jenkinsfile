@@ -21,7 +21,6 @@ pipeline {
 						}
 					}
 					steps {
-						sh 'sudo chmod -R 755 /root/.m2'
 						sh 'mvn -B -DskipTests clean package'
 						sh 'mvn test'
 					}
