@@ -15,13 +15,13 @@ pipeline {
 					agent {
 						docker {
 							image 'maven:3-alpine'
-							args '-v ~/.m2:/root/.m2' 
+							args '-v /root/.m2:/root/.m2' 
 							// args '-v ~/.m2:/var/maven/.m2'
 							
 						}
 					}
 					steps {
-						sh 'mvn -B -DskipTests clean package'
+						sh 'sudo mvn -B -DskipTests clean package'
 						sh 'mvn test'
 					}
 					post {
