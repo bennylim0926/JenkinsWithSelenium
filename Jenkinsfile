@@ -20,10 +20,15 @@ pipeline {
 							
 					// 	}
 					// }
-					steps {
-						sh 'mvn -B -DskipTests clean package'
-						sh 'mvn test'
+					scripts{
+						node{
+							sh 'mvn -B -DskipTests clean package'
+							sh 'mvn test'
+						}
 					}
+					// steps {
+						
+					// }
 					post {
 						always {
 							junit 'target/surefire-reports/*.xml'
