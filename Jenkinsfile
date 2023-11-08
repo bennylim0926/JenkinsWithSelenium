@@ -24,6 +24,7 @@ pipeline {
 					steps {			
 						script{
 							node{
+								sh 'docker ps -a'
 								sh 'mvn -B -DskipTests clean package'
 								sh 'mvn test'
 							}
