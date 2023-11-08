@@ -17,12 +17,11 @@ pipeline {
 							image 'maven:3-alpine'							
 							// args '-v /root/.m2:/root/.m2' 
 							args '-u root'
-							// args '-v ~/.m2:/var/maven/.m2'
 							
 						}
 					}
 					steps {
-						sh 'mvn -B -DskipTests clean package'
+						// sh 'mvn -B -DskipTests clean package'
 						sh 'mvn test'
 					}
 					post {
