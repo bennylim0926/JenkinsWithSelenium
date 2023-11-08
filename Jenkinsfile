@@ -21,7 +21,7 @@ pipeline {
 						}
 					}
 					steps {
-						sh 'sudo mvn -B -DskipTests clean package'
+						sh 'mvn -B -DskipTests clean package'
 						sh 'mvn test'
 					}
 					post {
