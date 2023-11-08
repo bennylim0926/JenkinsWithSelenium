@@ -12,19 +12,9 @@ pipeline {
 					}
 				}
 				stage('Headless Browser Test') {
-					agent none
-					// agent {	
-					// 	docker {
-					// 		image 'maven:3-alpine'							
-					// 		// args '-v /root/.m2:/root/.m2' 
-					// 		args '-u root'
-							
-					// 	}
-					// }	
 					steps {			
 						script{
 							node{
-								sh 'whoami'
 								sh 'mvn -B -DskipTests clean package'
 								sh 'mvn test'
 							}
