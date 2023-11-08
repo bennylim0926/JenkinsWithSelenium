@@ -16,6 +16,7 @@ pipeline {
 						script{
 							node{
 								sh 'mvn -v'
+								sh 'ls -la'
 								sh 'mvn -B -DskipTests clean package'
 								sh 'mvn test'
 							}
